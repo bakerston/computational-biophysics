@@ -1,0 +1,63 @@
+from collections import defaultdict
+
+
+def str2list(input_str):
+   return input_str.split()
+
+hb_all_snap=[]
+hb_res_snap=[]
+
+f=open("ans")
+
+for line in f.readlines():
+    tmp1=str2list(line)
+    tmp2=list(map(int,tmp1))
+
+    if tmp2[0]!=0:
+
+        hb_all_snap.append(tmp2[0])
+        hb_res_snap.append(tmp2[1:])
+
+f.close()
+ans=[list(a) for a in zip(hb_all_snap,hb_res_snap)]
+
+
+max_hb=max(hb_all_snap)
+
+hb_ans=[0 for x in range(max_hb)]
+
+dic=defaultdict(list)
+
+for k,v in ans:
+    dic[k].append(v)
+
+for i in sorted(dic.keys()):
+
+    tmp=[sum(i) for i in zip(*dic[i])]
+    print(i,len(dic[i]))
+    tmp2=[x/len(dic[i]) for x in tmp]
+
+    hb_ans[i-1]=[i,tmp2]
+
+
+#print(type(hb_ans[1][0]))
+#print(type(hb_ans[1][1]))
+
+f=open("out.dat","w+")
+for i in hb_ans:
+    for w in range(len(i[1])):
+        f.write(str(i[1][w]))
+        f.write("\t")
+    f.write("\n")
+f.close()
+
+f=open("xyz.dat","w+")
+for i in range(len(hb_ans)):
+    for w in range(len(hb_ans[i][1])):
+        f.write(str(i+1))
+        f.write("\t")
+        f.write(str(w+1))
+        f.write("\t")
+        f.write(str(hb_ans[i][1][w]))
+        f.write("\n")
+f.close()
