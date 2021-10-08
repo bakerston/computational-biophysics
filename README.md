@@ -1,4 +1,38 @@
-# hbond_data
-read pdb file and calculate hbond pairs according to time between two particular sections.
-hbond_data.py pdb.file
-./hbond_data.py
+## hbond_data
+
+##### Read pdb file and calculate time dependence hydrogen bonds between any two amino chains.
+
+`./hbond_data.py file_name.pdb`
+
+
+
+#### Read pdb file and calculate time dependence contact number within C-Alpha between any two amino chains.
+`./hbond_ca_con.py`
+
+
+
+#### Read Secondary-Structure output file and calculate averaged SS.
+
+`./dssp.py`
+|list|type|structure|Amnio Acids|
+|---|---|---|---|
+|`alist`|a alpha-helix|H, G, I|His, Gly, Ile|
+|`blist`|b beta-sheet|B, E|Glu, Asx|
+|`clist`|t tertiary|T|Thr|
+|`dlist`|c coil|S, C|Ser, Cys| 
+
+
+#### Read pdb file and calculate time dependence Q value of the selected chain.
+`q_value_hbond.py `
+
+| inputs | parameters | default value |
+|---|---|---|
+dis_cut| cut off distance |3.5 angstrom
+ang_cut| cut off angle |120 degree
+res_num| residue number on the chain|37 N/A
+eff_range| effective range |0 angstrom
+
+
+
+#### Create data for (Origin Software)
+`xyz_grid.py`
