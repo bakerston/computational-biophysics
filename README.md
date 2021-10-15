@@ -1,5 +1,8 @@
 ## hbond_data
 
+
+
+
 ##### Read pdb file and calculate time dependence hydrogen bonds between any two amino chains.
 
 `./hbond_data.py file_name.pdb`
@@ -22,6 +25,8 @@
 |`dlist`|c coil|S, C|Ser, Cys| 
 
 
+![](https://github.com/bakerston/computational-biophysics/blob/master/src/hbonds.png)
+![](https://github.com/bakerston/computational-biophysics/blob/master/src/hbond_index.png)
 #### Read pdb file and calculate time dependence Q value of the selected chain.
 `q_value_hbond.py `
 
@@ -32,7 +37,13 @@ ang_cut| cut off angle |120 degree
 res_num| residue number on the chain|37 N/A
 eff_range| effective range |0 angstrom
 
-
+![](https://github.com/bakerston/computational-biophysics/blob/master/src/ss.png)
 
 #### Create data for (Origin Software)
 `xyz_grid.py`
+
+
+#### Elongate protein fibrils by adding chains and maintain double helix structure.
+`firbil_elong.py`
+![](https://github.com/bakerston/computational-biophysics/blob/master/src/elongation.png)
+![]()
